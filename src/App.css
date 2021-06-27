@@ -1,0 +1,24 @@
+.App{
+    height: 100vh;
+    width: auto;
+}
+.container{
+    height: 100%;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+}
+#editor{
+    margin-top: 3.5rem;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+}
+#iframe{
+    margin-top: 3.5rem;
+    border-left: 5px black solid;
+    width: 50%;
+    height: 100%;
+}
