@@ -1,10 +1,10 @@
 import React from 'react'
 import AceEditor from "react-ace";
 
-import "ace-builds/src-noconflict/mode-html";
-// import "ace-builds/src-noconflict/theme-github";
+import "ace-builds/src-noconflict/theme-tomorrow_night";
+import "ace-builds/src-noconflict/theme-tomorrow";
 
-function CodeEditor({setCodeTxt, codeTxt, writeOutputToIframe}) {
+function CodeEditor({setCodeTxt, codeTxt, writeOutputToIframe, theme}) {
 
     const debouncePeriod = 300; // 300ms
 
@@ -20,6 +20,7 @@ function CodeEditor({setCodeTxt, codeTxt, writeOutputToIframe}) {
         <AceEditor
           mode="html"
           name="code"
+          theme={theme}
           onLoad={()=>onLoad(codeTxt)}
           onChange={onChange}
           debounceChangePeriod={debouncePeriod}

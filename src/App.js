@@ -16,7 +16,7 @@ function App() {
     <!-- css styles -->
     <style>
       h1{
-        color: red;
+        color: blue;
       }
     </style>
   </head>
@@ -34,19 +34,21 @@ function App() {
 </html>`;
 
   const [codeTxt, setCodeTxt] = React.useState(initialCode);
+  const [theme, setTheme] = React.useState('tomorrow');
 
   function writeOutputToIframe(newValue){
     const idoc = document.getElementById('iframe').contentWindow.document;
     idoc.open();
     idoc.write(newValue);
     idoc.close();
-}
+  }
+
 
   return (
     <div className="App">
-      <Navbar writeOutputToIframe={writeOutputToIframe} codeTxt={codeTxt}/>
+      <Navbar writeOutputToIframe={writeOutputToIframe} codeTxt={codeTxt} theme={theme} setTheme={setTheme}/>
       <main className="container">
-        <CodeEditor codeTxt={codeTxt} setCodeTxt={setCodeTxt} writeOutputToIframe={writeOutputToIframe}/>
+        <CodeEditor codeTxt={codeTxt} setCodeTxt={setCodeTxt} writeOutputToIframe={writeOutputToIframe} theme={theme}/>
         <iframe id="iframe" frameBorder="0" title="output"></iframe>
       </main>
     </div>

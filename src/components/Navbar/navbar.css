@@ -6,6 +6,7 @@
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
+    color: white;
 }
 .title{
     margin: 1rem;
@@ -25,8 +26,14 @@
     width: 5rem;
     border-color: #1566FC;
 }
+#theme{
+    margin-top: 1rem;
+}
 
 @media only screen and (max-width: 600px) {
+    .title{
+        font-size: small;
+    }
     .title,
     .run-btn,
     .download-btn{
@@ -38,5 +45,11 @@
         width: 3.5rem;
     }
 
+    label{
+        font-size: small;
+    }
+    #theme{
+        margin-top: 0.6rem;
+    }
 }
 
