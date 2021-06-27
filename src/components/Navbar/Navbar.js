@@ -3,13 +3,25 @@ import './navbar.css';
 
 function Navbar({writeOutputToIframe, codeTxt}) {
 
-    function onClickRun(e){
-        console.log("run");
+    function onClickRun(){
         writeOutputToIframe(codeTxt);
     }
-    function onClickDownload(e){
-        console.log("download");
+    function onClickDownload(){
+        downloadTxtFile("download.txt", codeTxt);
     }
+
+    function downloadTxtFile(filename, text) {
+        const element = document.createElement('a');
+        element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+        element.setAttribute('download', filename);
+        
+        element.style.display = 'none';
+        document.body.appendChild(element);
+        
+        element.click();
+        
+        document.body.removeChild(element);
+    }    
 
     return (    
         <nav className="navbar">
